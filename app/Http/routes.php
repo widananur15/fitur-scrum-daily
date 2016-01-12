@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Login
+Route::get('/login','LoginController@index');
+Route::post('/login/action','LoginController@show');
+
+//Scrum
+Route::get('/scrum','ScrumController@index');
