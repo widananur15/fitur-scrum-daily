@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Leaf\Util\SchemaUtil;
+use Leaf\Util\DateUtil;
 
 class CreateTableTUser extends Migration
 {
@@ -13,8 +15,14 @@ class CreateTableTUser extends Migration
     public function up()
     {
         Schema::create('t_user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+
+            $table->bigIncrements('user_id');
+            $table->string('email');
+            $table->string('username');
+            $table->string('password');
+            SchemaUtil::master($table);
+
+
         });
     }
 
