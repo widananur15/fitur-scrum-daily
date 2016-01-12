@@ -22,6 +22,8 @@ class CreateTableTUser extends Migration
             $table->string('active_datetime', 14);
             $table->string('non_active_datetime', 14);
 
+            $table->unique(['email','username']);
+
         });
     }
 
