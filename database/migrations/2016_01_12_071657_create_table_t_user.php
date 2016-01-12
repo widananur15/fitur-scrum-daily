@@ -18,7 +18,6 @@ class CreateTableTUser extends Migration
             $table->string('email');
             $table->string('username');
             $table->string('password');
-            $table->string('flg_active',2);
             $table->string('active', 1)->default('Y');
             $table->string('active_datetime', 14);
             $table->string('non_active_datetime', 14);
