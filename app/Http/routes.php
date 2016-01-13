@@ -19,5 +19,10 @@ Route::get('/', function () {
 Route::get('/login','LoginController@index');
 Route::post('/login/action','LoginController@show');
 
-//Scrum
-Route::get('/scrum','ScrumController@index');
+
+Route::group(['middleware'=>'myAuth'],function(){
+    //Scrum
+    Route::get('/scrum','ScrumController@index');
+});
+
+Route::get('/logout','ScrumController@destroy');
