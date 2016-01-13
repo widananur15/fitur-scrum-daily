@@ -63,6 +63,7 @@ class LoginController extends Controller
 
         $user = $this->loginService->doLogin($login_user,$password);
 
+//        var_dump($user);
         if($user){
             Session::put('loggeduser',$user);
                 return View('scrum/scrum');
